@@ -1,0 +1,188 @@
+import { Meta } from '@storybook/blocks'
+
+import { TokenTable, TokenCode } from './TokenTable'
+import { ColorSwatch, SwatchRow } from './ColorSwatch'
+
+<Meta title="Design System/Colors" />
+
+# Colors
+
+Color tokens are organized in three layers: **Base**,
+**Semantic** (meaning-bearing CSS variables consumed by components via
+Tailwind), and **Component** (how each component consumes the semantic
+tokens). Values match the CSS variables defined in
+`packages/react/src/styles/cattleya-ui.css`.
+
+## Base Tokens
+
+Raw color palette. Semantic tokens are derived from it.
+
+<SwatchRow>
+  <ColorSwatch hex="#2F0619" label="primary-900" sub="#2F0619" />
+  <ColorSwatch hex="#BD5B85" label="secondary-500" sub="#BD5B85" />
+  <ColorSwatch hex="#EFE2E8" label="neutral-100" sub="#EFE2E8" />
+  <ColorSwatch hex="#FFFFFF" label="neutral-0" sub="#FFFFFF" />
+  <ColorSwatch hex="#2E2E30" label="neutral-800" sub="#2E2E30" />
+  <ColorSwatch hex="#000000" label="neutral-950" sub="#000000" />
+</SwatchRow>
+
+## Semantic Tokens
+
+CSS variables (`--*`) that give meaning to the base palette. Defined on
+`:root` (light theme) and overridden in `.dark` (dark theme). Exposed to
+Tailwind via `@theme inline` as `bg-*` / `text-*` / `border-*`.
+
+<TokenTable
+  columns={['Token', 'Tailwind utility', 'Light', 'Dark', 'Usage']}
+  rows={[
+    [
+      <TokenCode>--main</TokenCode>,
+      <TokenCode>bg-main</TokenCode>,
+      <TokenCode>#EFE2E8</TokenCode>,
+      <TokenCode>#2E2E30</TokenCode>,
+      'Default neutral surface',
+    ],
+    [
+      <TokenCode>--main-secondary</TokenCode>,
+      <TokenCode>bg-main-secondary</TokenCode>,
+      <TokenCode>#FFFFFF</TokenCode>,
+      <TokenCode>#2E2E30</TokenCode>,
+      'Secondary neutral surface',
+    ],
+    [
+      <TokenCode>--main-foreground</TokenCode>,
+      <TokenCode>bg-main-foreground</TokenCode>,
+      <TokenCode>#EFE2E8</TokenCode>,
+      <TokenCode>#2E2E30</TokenCode>,
+      'Inner element background (e.g. switch track)',
+    ],
+    [
+      <TokenCode>--main-muted</TokenCode>,
+      <TokenCode>bg-main-muted</TokenCode>,
+      <TokenCode>#EFE2E8</TokenCode>,
+      <TokenCode>#000000</TokenCode>,
+      'Muted background (e.g. dialog footer)',
+    ],
+    [
+      <TokenCode>--main-background</TokenCode>,
+      <TokenCode>bg-main-background</TokenCode>,
+      <TokenCode>#FFFFFF</TokenCode>,
+      <TokenCode>#000000</TokenCode>,
+      'Elevated surface background (card, input, outline button)',
+    ],
+    [
+      <TokenCode>--main-invert</TokenCode>,
+      <TokenCode>bg-main-invert</TokenCode>,
+      <TokenCode>#000000</TokenCode>,
+      <TokenCode>#FFFFFF</TokenCode>,
+      'Inverted surface, used on hover',
+    ],
+    [
+      <TokenCode>--primary</TokenCode>,
+      <TokenCode>bg-primary</TokenCode>,
+      <TokenCode>#2F0619</TokenCode>,
+      <TokenCode>#EFE2E8</TokenCode>,
+      'Brand / primary action color',
+    ],
+    [
+      <TokenCode>--primary-invert</TokenCode>,
+      <TokenCode>text-primary-invert</TokenCode>,
+      <TokenCode>#FFFFFF</TokenCode>,
+      <TokenCode>#000000</TokenCode>,
+      'Text on top of --primary',
+    ],
+    [
+      <TokenCode>--primary-foreground</TokenCode>,
+      <TokenCode>text-primary-foreground</TokenCode>,
+      <TokenCode>#2E2E30</TokenCode>,
+      <TokenCode>#EFE2E8</TokenCode>,
+      'High-contrast text on neutral surfaces',
+    ],
+    [
+      <TokenCode>--primary-muted</TokenCode>,
+      <TokenCode>text-primary-muted</TokenCode>,
+      <TokenCode>#BD5B85</TokenCode>,
+      <TokenCode>#BD5B85</TokenCode>,
+      'Secondary / supporting text',
+    ],
+    [
+      <TokenCode>--secondary</TokenCode>,
+      <TokenCode>bg-secondary</TokenCode>,
+      <TokenCode>#BD5B85</TokenCode>,
+      <TokenCode>#BD5B85</TokenCode>,
+      'Secondary brand color, fixed across themes',
+    ],
+    [
+      <TokenCode>--border</TokenCode>,
+      <TokenCode>border-border</TokenCode>,
+      <TokenCode>#EFE2E8</TokenCode>,
+      <TokenCode>#2E2E30</TokenCode>,
+      'Default border color',
+    ],
+    [
+      <TokenCode>--overlay</TokenCode>,
+      <TokenCode>bg-overlay</TokenCode>,
+      <TokenCode>rgb(0 0 0 / 50%)</TokenCode>,
+      <TokenCode>rgb(0 0 0 / 80%)</TokenCode>,
+      'Dark layer behind the Dialog',
+    ],
+  ]}
+/>
+
+<div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+  <div>
+    <p style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Light</p>
+    <SwatchRow>
+      <ColorSwatch hex="#EFE2E8" label="main" sub="--main" />
+      <ColorSwatch hex="#FFFFFF" label="main-secondary" sub="--main-secondary" />
+      <ColorSwatch hex="#FFFFFF" label="main-background" sub="--main-background" />
+      <ColorSwatch hex="#2F0619" label="primary" sub="--primary" />
+      <ColorSwatch hex="#BD5B85" label="primary-muted" sub="--primary-muted" />
+      <ColorSwatch hex="#BD5B85" label="secondary" sub="--secondary" />
+      <ColorSwatch hex="rgb(0 0 0 / 50%)" label="overlay" sub="--overlay" />
+    </SwatchRow>
+  </div>
+  <div>
+    <p style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Dark</p>
+    <SwatchRow>
+      <ColorSwatch hex="#2E2E30" label="main" sub="--main" />
+      <ColorSwatch hex="#2E2E30" label="main-secondary" sub="--main-secondary" />
+      <ColorSwatch hex="#000000" label="main-background" sub="--main-background" />
+      <ColorSwatch hex="#EFE2E8" label="primary" sub="--primary" />
+      <ColorSwatch hex="#BD5B85" label="primary-muted" sub="--primary-muted" />
+      <ColorSwatch hex="#BD5B85" label="secondary" sub="--secondary" />
+      <ColorSwatch hex="rgb(0 0 0 / 80%)" label="overlay" sub="--overlay" />
+    </SwatchRow>
+  </div>
+</div>
+
+## Component Tokens
+
+How each component consumes semantic tokens (or, in a few cases, raw
+Tailwind color utilities when no semantic token exists yet — e.g.
+`success` / `destructive` variants).
+
+<TokenTable
+  columns={['Component', 'Variant', 'Background', 'Text', 'Border']}
+  rows={[
+    ['Button', 'default', <TokenCode>--primary</TokenCode>, <TokenCode>--primary-invert</TokenCode>, 'transparent'],
+    ['Button', 'outline', <TokenCode>--main-background</TokenCode>, <TokenCode>--primary-foreground</TokenCode>, <TokenCode>--border</TokenCode>],
+    ['Button', 'success', 'green-700 → green-600 (gradient)', 'white', '—'],
+    ['Button', 'destructive', 'red-600 → red-500 (gradient)', 'white', '—'],
+    ['Badge', 'default', <TokenCode>--primary</TokenCode>, <TokenCode>--primary-invert</TokenCode>, 'transparent'],
+    ['Badge', 'outline', <TokenCode>--main-background</TokenCode>, <TokenCode>--primary-foreground</TokenCode>, <TokenCode>--border</TokenCode>],
+    ['Badge', 'success', 'green-700 → green-600 (gradient)', 'white', '—'],
+    ['Badge', 'destructive', 'red-600 → red-500 (gradient)', 'white', '—'],
+    ['Card', '—', <TokenCode>--main-background</TokenCode>, <TokenCode>--primary-foreground</TokenCode>, <TokenCode>--primary (10%)</TokenCode>],
+    ['Input', '—', <TokenCode>--main-secondary</TokenCode>, <TokenCode>--primary-foreground / --primary-muted</TokenCode>, <TokenCode>--border / --primary (20%)</TokenCode>],
+    ['Switch', 'track / thumb', <TokenCode>--main-foreground / --primary-invert</TokenCode>, '—', '—'],
+    ['Checkbox', 'root / indicator', <TokenCode>--main-muted / --primary</TokenCode>, <TokenCode>--primary-invert</TokenCode>, <TokenCode>--border</TokenCode>],
+    ['DropdownMenu', 'trigger / content', <TokenCode>--main-secondary / --main</TokenCode>, <TokenCode>--primary-muted / --secondary (icon)</TokenCode>, <TokenCode>--border</TokenCode>],
+    ['Tooltip', '—', <TokenCode>--main</TokenCode>, <TokenCode>--primary-muted</TokenCode>, <TokenCode>--border</TokenCode>],
+    ['Avatar', 'root / fallback', <TokenCode>--main-foreground / --main-background</TokenCode>, <TokenCode>--primary-muted</TokenCode>, <TokenCode>--border</TokenCode>],
+    ['Dialog', 'overlay', <TokenCode>--overlay</TokenCode>, '—', '—'],
+    ['Dialog', 'content / footer', <TokenCode>--main / --main-muted</TokenCode>, <TokenCode>--primary / --primary-muted</TokenCode>, <TokenCode>--border</TokenCode>],
+    ['Accordion', 'trigger / content', 'transparent', <TokenCode>--primary / --primary-muted / --secondary (icon)</TokenCode>, '—'],
+    ['Spinner', 'bars', <TokenCode>--primary</TokenCode>, '—', '—'],
+  ]}
+/>
