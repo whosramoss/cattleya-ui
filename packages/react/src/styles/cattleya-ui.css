@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  /* Neutrals */
+  --main: #efe2e8;
+  --main-secondary: #ffffff;
+  --main-foreground: #efe2e8;
+  --main-muted: #efe2e8;
+  --main-background: #ffffff;
+  --main-invert: #000000;
+
+  /* Brand */
+  --primary: #2f0619;
+  --primary-invert: #ffffff;
+  --primary-foreground: #2e2e30;
+  --primary-muted: #bd5b85;
+  --secondary: #bd5b85;
+
+  --border: #efe2e8;
+
+  /* Overlay */
+  --overlay: rgb(0 0 0 / 50%);
+}
+
+.dark {
+  /* Neutrals */
+  --main: #2e2e30;
+  --main-secondary: #2e2e30;
+  --main-foreground: #2e2e30;
+  --main-muted: #000000;
+  --main-background: #000000;
+  --main-invert: #ffffff;
+
+  /* Brand — primary flips for contrast on dark surfaces */
+  --primary: #efe2e8;
+  --primary-invert: #000000;
+  --primary-foreground: #efe2e8;
+  --primary-muted: #bd5b85;
+  --secondary: #bd5b85;
+
+  --border: #2e2e30;
+
+  /* Overlay — darker to keep contrast on dark surfaces */
+  --overlay: rgb(0 0 0 / 80%);
+}
+
+@theme inline {
+  --font-sans: 'Geist', sans-serif;
+
+  --color-main: var(--main);
+  --color-main-secondary: var(--main-secondary);
+  --color-main-foreground: var(--main-foreground);
+  --color-main-muted: var(--main-muted);
+  --color-main-background: var(--main-background);
+  --color-main-invert: var(--main-invert);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-muted: var(--primary-muted);
+  --color-primary-invert: var(--primary-invert);
+  --color-secondary: var(--secondary);
+
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+
+  --animate-spinner: spinner 1.2s linear infinite;
+  --animate-accordion-open: accordion-open 0.2s ease-out;
+  --animate-accordion-close: accordion-close 0.2s ease-out;
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes accordion-open {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-close {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes spinner {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.15;
+    }
+  }
+}
