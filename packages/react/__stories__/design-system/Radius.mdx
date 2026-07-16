@@ -1,14 +1,22 @@
 import { Meta } from '@storybook/blocks'
 
-import { TokenTable, TokenCode } from './TokenTable'
+import { TokenTable, TokenCode } from '../components/utils/TokenTable'
+import { PageHeader } from '../components/utils/PageHeader'
 import { RadiusScale } from './RadiusScale'
 
 <Meta title="Design System/Radius" />
 
-# Radius
+<PageHeader
+  title="Radius"
+  description="Default Tailwind border-radius scale, used consistently across cattleya-ui components."
+/>
 
-Default Tailwind `border-radius` scale, used consistently across
-**cattleya-ui** components.
+## Summary
+
+- [Radius Tokens](#radius-tokens)
+- [Examples](#examples)
+
+## Radius Tokens
 
 <TokenTable
   columns={['Token', 'px', 'Utility', 'Usage']}
@@ -20,5 +28,7 @@ Default Tailwind `border-radius` scale, used consistently across
     [<TokenCode>inherit</TokenCode>, 'inherited from parent', <TokenCode>rounded-[inherit]</TokenCode>, 'Checkbox indicator, Dialog footer'],
   ]}
 />
+
+## Examples
 
 <RadiusScale />

@@ -1,14 +1,23 @@
 import { Meta } from '@storybook/blocks'
 
-import { TokenTable, TokenCode } from './TokenTable'
+import { TokenTable, TokenCode } from '../components/utils/TokenTable'
+import { PageHeader } from '../components/utils/PageHeader'
 import { SpacingScale } from './SpacingScale'
 
 <Meta title="Design System/Spacing" />
 
-# Spacing
+<PageHeader
+  title="Spacing"
+  description="Default Tailwind scale (1 = 0.25rem = 4px). Only the values actually used by cattleya-ui components are listed below."
+/>
 
-Default Tailwind scale (`1` = `0.25rem` = `4px`). Only the values actually
-used by **cattleya-ui** components are listed below.
+## Summary
+
+- [Spacing Tokens](#spacing-tokens)
+- [Examples](#examples)
+- [How to Use](#how-to-use)
+
+## Spacing Tokens
 
 <TokenTable
   columns={['Token', 'rem', 'px', 'Utilities', 'Usage']}
@@ -25,4 +34,32 @@ used by **cattleya-ui** components are listed below.
   ]}
 />
 
+## Examples
+
 <SpacingScale />
+
+## How to Use
+
+Prefer the matching Tailwind spacing utility over inline arbitrary values or
+manual `rem` / `px` calculations, so spacing stays consistent with the scale
+above and colocated with the markup.
+
+### ✅ Recommended
+
+```tsx
+<div className="flex flex-col gap-4 p-6">
+  <span>...</span>
+</div>
+```
+
+### ❌ Avoid
+
+```tsx
+<div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '24px' }}>
+  <span>...</span>
+</div>
+```
+
+**Why?** Utilities like `gap-4` and `p-6` map directly to the tokens above,
+read consistently across the codebase, and avoid one-off values that drift
+from the scale over time.
