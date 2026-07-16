@@ -1,0 +1,10 @@
+{
+	"extends": "@cattleya-ui/ts-config/react.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"@/registry/*": ["src/components/*"]
+		}
+	}
+}

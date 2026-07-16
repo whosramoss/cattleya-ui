@@ -1,0 +1,11 @@
+# Storybook — docs e demos, não fazem parte do package publicado
+__stories__/
+
+# Tooling local / monorepo
+tsconfig.json
+postcss.config.mjs
+
+# Artefatos de build e ambiente
+*.log
+*.tsbuildinfo
+.DS_Store
