@@ -1,0 +1,19 @@
+{
+	"semi": false,
+	"singleQuote": true,
+	"jsxSingleQuote": false,
+	"trailingComma": "all",
+	"arrowParens": "avoid",
+	"printWidth": 80,
+	"tabWidth": 2,
+	"useTabs": false,
+	"endOfLine": "auto",
+	"overrides": [
+		{
+			"files": ["*.json", "*.jsonc"],
+			"options": {
+				"useTabs": true
+			}
+		}
+	]
+}

@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+package-lock.json
+apps/www/public/registry/
+apps/www/src/assets/icons/
+storybook-static/
+*.mdx
