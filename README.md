@@ -18,7 +18,7 @@
 ## How to install
 
 ```bash
-npm install @cattleya-ui/react
+npm install cattleya-ui
 ```
 
 ## Usage
@@ -26,10 +26,10 @@ npm install @cattleya-ui/react
 Import the design system styles once in your app entry:
 
 ```tsx
-import '@cattleya-ui/react/styles.css'
+import 'cattleya-ui/styles.css'
 ```
 
-Components live under `@cattleya-ui/react` and follow a copy-friendly source style — browse them in Storybook, then bring the ones you need into your project.
+Components live under `cattleya-ui` and follow a copy-friendly source style — browse them in Storybook, then bring the ones you need into your project.
 
 ```tsx
 import { Button } from './components/button'

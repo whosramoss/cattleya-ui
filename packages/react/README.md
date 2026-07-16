@@ -1,7 +1,7 @@
 <h1>
   <p align="center">
     <img src="https://raw.githubusercontent.com/whosramoss/cattleya-ui/main/imgs/android-chrome-192x192.png" alt="logo" width="128">
-    <br>@cattleya-ui/react
+    <br>cattleya-ui
   </p>
 </h1>
 
@@ -12,7 +12,7 @@
 ## Installation
 
 ```bash
-npm install @cattleya-ui/react
+npm install cattleya-ui
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install @cattleya-ui/react
 Import the design system styles once in your app entry:
 
 ```tsx
-import '@cattleya-ui/react/styles.css'
+import 'cattleya-ui/styles.css'
 ```
 
 Components follow a copy-friendly source style — browse them in this package (`src/components`) or on [GitHub](https://github.com/whosramoss/cattleya-ui/tree/main/packages/react/src/components), then bring the ones you need into your project:

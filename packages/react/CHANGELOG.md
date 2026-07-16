@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial public release of `@cattleya-ui/react`.
+- Initial public release of `cattleya-ui`.
 - Components: `Accordion`, `Avatar`, `Badge`, `Button`, `Card`, `Checkbox`, `Dialog`, `DropdownMenu`, `Input`, `Spinner`, `Switch`, `Tooltip`.
 - Design tokens for colors, spacing, radius, and typography, documented in Storybook.
 

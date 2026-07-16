@@ -1,4 +1,4 @@
-import '@cattleya-ui/react/styles.css'
+import 'cattleya-ui/styles.css'
 
 import { withThemeByClassName } from '@storybook/addon-themes'
 

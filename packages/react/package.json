@@ -1,5 +1,5 @@
 {
-	"name": "@cattleya-ui/react",
+	"name": "cattleya-ui",
 	"version": "1.0.0",
 	"description": "Component library for building applications that flourish.",
 	"type": "module",

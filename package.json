@@ -1,5 +1,5 @@
 {
-	"name": "cattleya-ui",
+	"name": "cattleya-ui-monorepo",
 	"type": "module",
 	"description": "Component library for building applications that flourish.",
 	"private": true,
@@ -30,7 +30,7 @@
 		"packages/*"
 	],
 	"dependencies": {
-		"@cattleya-ui/react": "*",
+		"cattleya-ui": "*",
 		"@radix-ui/react-slot": "^1.2.3",
 		"@tailwindcss/postcss": "^4.0.14",
 		"postcss": "^8"

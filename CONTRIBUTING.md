@@ -41,7 +41,7 @@ packages
 
 | Path                         | Description                                           |
 | ---------------------------- | ----------------------------------------------------- |
-| `packages/react`             | The `@cattleya-ui/react` component library.           |
+| `packages/react`             | The `cattleya-ui` component library.                  |
 | `packages/react/__stories__` | Storybook stories for each component.                 |
 | `packages/ts-config`         | Shared TypeScript configs (`@cattleya-ui/ts-config`). |
 
