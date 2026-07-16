@@ -1,0 +1,40 @@
+import { Meta } from '@storybook/blocks'
+
+import { TokenTable, TokenCode } from './TokenTable'
+import { TypographySample, TypographySamples } from './TypographySample'
+
+<Meta title="Design System/Typography" />
+
+# Typography
+
+Single project font: **Geist** (`--font-sans`), with **Geist Mono** for
+monospace snippets. Sizes, weights, and line heights below are the ones
+actually used by **@cattleya-ui/react** components.
+
+<TokenTable
+  columns={['Token', 'rem', 'px', 'Usage']}
+  rows={[
+    [<TokenCode>text-xs</TokenCode>, '0.75rem', '12px', 'Badge, Tooltip'],
+    [<TokenCode>text-sm</TokenCode>, '0.875rem', '14px', 'Button'],
+    [<TokenCode>text-sm/5.5</TokenCode>, '0.875rem / 1.375rem', '14px / 22px', 'Input text and placeholder, Dialog description'],
+    [<TokenCode>text-base/none</TokenCode>, '1rem / 1', '16px', 'Accordion trigger'],
+  ]}
+/>
+
+<TokenTable
+  columns={['Weight', 'Value', 'Utility', 'Usage']}
+  rows={[
+    ['Normal', '400', <TokenCode>font-normal</TokenCode>, 'Body text (Input)'],
+    ['Medium', '500', <TokenCode>font-medium</TokenCode>, 'Button / Badge label'],
+    ['Semibold', '600', <TokenCode>font-semibold</TokenCode>, 'Dialog title'],
+  ]}
+/>
+
+<TypographySamples>
+  <TypographySample label="text-xs · Geist 400 — Aa Bb Cc 0123" style={{ fontSize: '0.75rem' }} />
+  <TypographySample label="text-sm/5.5 · Geist 400 — Aa Bb Cc 0123" style={{ fontSize: '0.875rem', lineHeight: '1.375rem' }} />
+  <TypographySample label="text-sm · Geist 500 — Aa Bb Cc 0123" style={{ fontSize: '0.875rem', fontWeight: 500 }} />
+  <TypographySample label="text-base/none · Geist 400 — Aa Bb Cc 0123" style={{ fontSize: '1rem', lineHeight: 1 }} />
+  <TypographySample label="Geist 600 — Aa Bb Cc 0123" style={{ fontSize: '1.25rem', fontWeight: 600 }} />
+  <TypographySample label="Geist Mono — Aa Bb Cc 0123" style={{ fontFamily: 'Geist Mono, monospace', fontSize: '0.875rem' }} />
+</TypographySamples>
