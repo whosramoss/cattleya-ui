@@ -1,0 +1,159 @@
+import { Meta, Unstyled } from '@storybook/blocks'
+
+<Meta title="Welcome" />
+
+<style>
+  {`
+    @keyframes welcome-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes welcome-icon-fade-in {
+      from {
+        opacity: 0;
+        transform: translate(50%, -50%);
+      }
+      to {
+        opacity: 0.15;
+        transform: translate(50%, -50%);
+      }
+    }
+
+    .welcome-page {
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      padding: 2.5rem 1.5rem 1.5rem !important;
+      box-sizing: border-box !important;
+      background: #2F0619 !important;
+      overflow: hidden !important;
+      color: #ffffff !important;
+      font-family: Geist, sans-serif !important;
+    }
+
+    .welcome-page * {
+      color: #ffffff !important;
+      font-family: Geist, sans-serif !important;
+      box-sizing: border-box !important;
+    }
+
+    .welcome-page .welcome-header {
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: space-between !important;
+      gap: 1.5rem !important;
+      width: 100% !important;
+      position: relative !important;
+      z-index: 1 !important;
+    }
+
+    .welcome-page .welcome-left {
+      max-width: 480px !important;
+      flex: 1 1 auto !important;
+    }
+
+    .welcome-page .welcome-right {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-end !important;
+      justify-content: flex-start !important;
+      flex: 0 0 auto !important;
+      padding-top: 0 !important;
+    }
+
+    .welcome-page .welcome-desc {
+      margin: 0.75rem 0 0 !important;
+      padding: 0 !important;
+      font-size: 1.3rem !important;
+      font-weight: 400 !important;
+      line-height: 1.55 !important;
+      color: #ffffff !important;
+      animation: welcome-fade-in 0.7s ease-out 0.25s both;
+    }
+
+    .welcome-page .welcome-install {
+      margin: 0 !important;
+      padding: 0 !important;
+      font-size: 0.85rem !important;
+      font-family: 'Geist Mono', monospace !important;
+      line-height: 1.55 !important;
+      color: rgba(255, 255, 255, 0.85) !important;
+      white-space: nowrap !important;
+      text-decoration: none !important;
+      display: inline-block !important;
+      animation: welcome-fade-in 0.7s ease-out 0s both;
+    }
+
+    .welcome-page .welcome-install:hover {
+      color: #ffffff !important;
+      text-decoration: underline !important;
+    }
+
+    .welcome-page .welcome-logo {
+      display: block !important;
+      width: calc(100% - 1.5rem) !important;
+      height: auto !important;
+      margin-top: auto !important;
+      margin-inline: 0.75rem !important;
+      object-fit: contain !important;
+      object-position: bottom center !important;
+      align-self: center !important;
+      position: relative !important;
+      z-index: 1 !important;
+      animation: welcome-fade-in 0.9s ease-out 0.75s both;
+    }
+
+    .welcome-page .welcome-icon {
+      position: absolute !important;
+      top: 50% !important;
+      right: 0 !important;
+      width: min(100vh, 100vw) !important;
+      height: auto !important;
+      pointer-events: none !important;
+      user-select: none !important;
+      z-index: 0 !important;
+      animation: welcome-icon-fade-in 1s ease-out 0.5s both;
+    }
+  `}
+</style>
+
+<Unstyled>
+  <div className="welcome-page">
+    <img
+      className="welcome-icon"
+      src="/icon.svg"
+      alt=""
+      aria-hidden="true"
+    />
+
+    <div className="welcome-header">
+      <div className="welcome-left">
+        <a
+          className="welcome-install"
+          href="https://www.npmjs.com/package/cattleya-ui"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          npm i @cattleya-ui/react
+        </a>
+        <div className="welcome-desc">
+          Component library for building <br/> applications that flourish.
+        </div>
+      </div>
+    </div>
+
+    <img className="welcome-logo" src="/name.svg" alt="Cattleya" />
+  </div>
+</Unstyled>
