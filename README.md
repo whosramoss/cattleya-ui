@@ -15,12 +15,6 @@
   <a href="#components">Components</a>
 </p>
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/cattleya-ui">npm</a>
-  ·
-  <a href="#docs">Storybook</a>
-</p>
-
 ## How to install
 
 ```bash
@@ -44,6 +38,8 @@ export function Example() {
   return <Button variant="default">Button</Button>
 }
 ```
+
+Wondering why components aren't imported directly from the package? See [Why copy-paste instead of a direct import](./docs/copy-paste-model.md).
 
 ## Components
 
