@@ -6,6 +6,10 @@
 	"exports": {
 		"./styles.css": "./src/styles/globals.css"
 	},
+	"files": [
+		"src",
+		"CHANGELOG.md"
+	],
 	"keywords": [
 		"react",
 		"ui",
