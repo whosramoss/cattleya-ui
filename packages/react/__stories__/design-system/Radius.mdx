@@ -1,0 +1,24 @@
+import { Meta } from '@storybook/blocks'
+
+import { TokenTable, TokenCode } from './TokenTable'
+import { RadiusScale } from './RadiusScale'
+
+<Meta title="Design System/Radius" />
+
+# Radius
+
+Default Tailwind `border-radius` scale, used consistently across
+**@cattleya-ui/react** components.
+
+<TokenTable
+  columns={['Token', 'px', 'Utility', 'Usage']}
+  rows={[
+    [<TokenCode>md</TokenCode>, '6px', <TokenCode>rounded-md</TokenCode>, 'Spinner bars, Checkbox root'],
+    [<TokenCode>lg</TokenCode>, '8px', <TokenCode>rounded-lg</TokenCode>, 'Tooltip, DropdownMenu item'],
+    [<TokenCode>xl</TokenCode>, '12px', <TokenCode>rounded-xl</TokenCode>, 'Button, Card, Input, Dialog, DropdownMenu trigger/menu'],
+    [<TokenCode>full</TokenCode>, '9999px', <TokenCode>rounded-full</TokenCode>, 'Badge (outline/success/destructive), Switch, Avatar'],
+    [<TokenCode>inherit</TokenCode>, 'inherited from parent', <TokenCode>rounded-[inherit]</TokenCode>, 'Checkbox indicator, Dialog footer'],
+  ]}
+/>
+
+<RadiusScale />
