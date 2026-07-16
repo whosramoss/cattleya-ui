@@ -8,15 +8,27 @@ import {
 } from '@/components/tooltip'
 import { Button } from '@/components/button'
 
-const meta: Meta = {
+type TooltipContentProps = React.ComponentProps<typeof TooltipContent>
+
+const meta: Meta<TooltipContentProps> = {
   title: 'components/Tooltip',
-  component: () => (
+  component: TooltipContent,
+  argTypes: {
+    side: {
+      options: ['top', 'right', 'bottom', 'left'],
+      control: 'radio',
+    },
+  },
+  args: {
+    side: 'top',
+  },
+  render: args => (
     <TooltipProvider>
-      <Tooltip>
+      <Tooltip defaultOpen>
         <TooltipTrigger asChild>
           <Button variant="outline">Hover</Button>
         </TooltipTrigger>
-        <TooltipContent>
+        <TooltipContent {...args}>
           <span>Add to library</span>
         </TooltipContent>
       </Tooltip>
@@ -29,4 +41,34 @@ const meta: Meta = {
 
 export default meta
 
-export const Basic: StoryObj = {}
+type Story = StoryObj<TooltipContentProps>
+
+export const Top: Story = {
+  args: {
+    side: 'top',
+  },
+}
+
+export const Right: Story = {
+  args: {
+    side: 'right',
+  },
+}
+
+export const Bottom: Story = {
+  args: {
+    side: 'bottom',
+  },
+}
+
+export const Left: Story = {
+  args: {
+    side: 'left',
+  },
+}
+
+export const Api: Story = {
+  args: {
+    side: 'top',
+  },
+}

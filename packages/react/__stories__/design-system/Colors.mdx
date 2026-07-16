@@ -1,17 +1,24 @@
 import { Meta } from '@storybook/blocks'
 
-import { TokenTable, TokenCode } from './TokenTable'
+import { TokenTable, TokenCode } from '../components/utils/TokenTable'
+import { PageHeader } from '../components/utils/PageHeader'
 import { ColorSwatch, SwatchRow } from './ColorSwatch'
 
 <Meta title="Design System/Colors" />
 
-# Colors
+<PageHeader
+  title="Colors"
+  description="Color tokens organized in three layers: Base, Semantic (meaning-bearing CSS variables consumed by components via Tailwind), and Component (how each component consumes the semantic tokens)."
+/>
 
-Color tokens are organized in three layers: **Base**,
-**Semantic** (meaning-bearing CSS variables consumed by components via
-Tailwind), and **Component** (how each component consumes the semantic
-tokens). Values match the CSS variables defined in
+Values match the CSS variables defined in
 `packages/react/src/styles/cattleya-ui.css`.
+
+## Summary
+
+- [Base Tokens](#base-tokens)
+- [Semantic Tokens](#semantic-tokens)
+- [Component Tokens](#component-tokens)
 
 ## Base Tokens
 

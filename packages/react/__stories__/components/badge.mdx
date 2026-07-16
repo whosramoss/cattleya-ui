@@ -1,0 +1,46 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as BadgeStories from './badge.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={BadgeStories} />
+
+<PageHeader
+  title="Badge"
+  description="A small, static label used to highlight status, category, or metadata next to other content."
+/>
+
+### variants
+
+#### default
+
+The `default` variant is used for the most prominent tag on a page. Use it
+sparingly to keep its emphasis.
+
+<Canvas of={BadgeStories.Default} />
+
+#### outline
+
+The `outline` variant is for low emphasis. It should be placed alongside
+other badge variants to surface less prominent tags.
+
+<Canvas of={BadgeStories.Outline} />
+
+#### success
+
+The `success` variant communicates a positive state, such as "active" or
+"completed".
+
+<Canvas of={BadgeStories.Success} />
+
+#### destructive
+
+The `destructive` variant communicates a negative or critical state, such as
+"failed" or "expired".
+
+<Canvas of={BadgeStories.Destructive} />
+
+## API
+
+<Canvas of={BadgeStories.Api} />
+
+<Controls of={BadgeStories.Api} />

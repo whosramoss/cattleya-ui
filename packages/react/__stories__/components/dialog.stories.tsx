@@ -51,3 +51,5 @@ const meta: Meta = {
 export default meta
 
 export const Basic: StoryObj = {}
+
+export const Api: StoryObj = {}

@@ -1,0 +1,36 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as AvatarStories from './avatar.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={AvatarStories} />
+
+<PageHeader
+  title="Avatar"
+  description="Represents a user with a profile image, falling back to initials or an icon when no image is available."
+/>
+
+### default
+
+`default` renders the image when it loads successfully.
+
+<Canvas of={AvatarStories.Default} />
+
+### with border
+
+Avatars with the `hasBorder` prop render a subtle outline, useful when the
+avatar sits directly on top of a similarly colored surface.
+
+<Canvas of={AvatarStories.WithBorder} />
+
+### fallback
+
+When the image fails to load, `AvatarFallback` is rendered automatically in
+its place.
+
+<Canvas of={AvatarStories.Fallback} />
+
+## API
+
+<Canvas of={AvatarStories.Api} />
+
+<Controls of={AvatarStories.Api} />

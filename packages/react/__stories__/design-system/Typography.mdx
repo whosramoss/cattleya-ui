@@ -1,15 +1,25 @@
 import { Meta } from '@storybook/blocks'
 
-import { TokenTable, TokenCode } from './TokenTable'
+import { TokenTable, TokenCode } from '../components/utils/TokenTable'
+import { PageHeader } from '../components/utils/PageHeader'
 import { TypographySample, TypographySamples } from './TypographySample'
 
 <Meta title="Design System/Typography" />
 
-# Typography
+<PageHeader
+  title="Typography"
+  description="Single project font: Geist (--font-sans), with Geist Mono for monospace snippets."
+/>
 
-Single project font: **Geist** (`--font-sans`), with **Geist Mono** for
-monospace snippets. Sizes, weights, and line heights below are the ones
-actually used by **cattleya-ui** components.
+Sizes, weights, and line heights below are the ones actually used by
+**cattleya-ui** components.
+
+## Summary
+
+- [Font Tokens](#font-tokens)
+- [Samples](#samples)
+
+## Font Tokens
 
 <TokenTable
   columns={['Token', 'rem', 'px', 'Usage']}
@@ -29,6 +39,8 @@ actually used by **cattleya-ui** components.
     ['Semibold', '600', <TokenCode>font-semibold</TokenCode>, 'Dialog title'],
   ]}
 />
+
+## Samples
 
 <TypographySamples>
   <TypographySample label="text-xs · Geist 400 — Aa Bb Cc 0123" style={{ fontSize: '0.75rem' }} />

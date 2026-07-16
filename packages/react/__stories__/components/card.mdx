@@ -1,0 +1,23 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as CardStories from './card.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={CardStories} />
+
+<PageHeader
+  title="Card"
+  description="A generic surface container used to group related content, such as text, images, or actions."
+/>
+
+### basic
+
+The `Card` component has no variants — it is a simple bordered surface that
+adapts to whatever `children` are passed to it.
+
+<Canvas of={CardStories.Basic} />
+
+## API
+
+<Canvas of={CardStories.Api} />
+
+<Controls of={CardStories.Api} />

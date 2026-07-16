@@ -10,6 +10,11 @@ const meta: Meta<InputProps> = {
   args: {
     placeholder: 'Placeholder',
   },
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+    },
+  },
   parameters: {
     layout: 'centered',
   },
@@ -17,4 +22,14 @@ const meta: Meta<InputProps> = {
 
 export default meta
 
-export const Basic: StoryObj<InputProps> = {}
+type Story = StoryObj<InputProps>
+
+export const Default: Story = {}
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+}
+
+export const Api: Story = {}

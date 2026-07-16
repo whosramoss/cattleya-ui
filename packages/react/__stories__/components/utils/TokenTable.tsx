@@ -10,22 +10,25 @@ export function TokenTable({ columns, rows }: TokenTableProps) {
     <table
       style={{
         width: '100%',
-        borderCollapse: 'collapse',
+        borderCollapse: 'separate',
+        borderSpacing: 0,
         fontSize: '0.85rem',
         margin: '1rem 0 2rem',
         fontFamily: 'Geist, sans-serif',
+        overflow: 'hidden',
+        borderRadius: 8,
       }}
     >
       <thead>
-        <tr>
+        <tr style={{ background: 'var(--primary)' }}>
           {columns.map(column => (
             <th
               key={column}
               style={{
                 textAlign: 'left',
                 padding: '0.6rem 0.75rem',
-                borderBottom: '2px solid var(--border)',
-                color: 'var(--primary-foreground)',
+                borderBottom: '2px solid var(--primary)',
+                color: 'var(--primary-invert)',
                 fontWeight: 600,
                 whiteSpace: 'nowrap',
               }}

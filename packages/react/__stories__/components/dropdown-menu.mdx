@@ -1,0 +1,30 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as DropdownMenuStories from './dropdown-menu.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={DropdownMenuStories} />
+
+<PageHeader
+  title="Dropdown Menu"
+  description="Displays a list of actions or options triggered by a button, revealed and hidden with an animated clip-path transition."
+/>
+
+### basic
+
+`basic` renders the menu content inline, pushing the layout below it. Click
+the trigger to toggle it open and closed.
+
+<Canvas of={DropdownMenuStories.Basic} />
+
+### floating
+
+With the `floating` prop, `DropdownMenuContent` is absolutely positioned so
+it overlaps the content below it instead of pushing it down.
+
+<Canvas of={DropdownMenuStories.Floating} />
+
+## API
+
+<Canvas of={DropdownMenuStories.Api} />
+
+<Controls of={DropdownMenuStories.Api} />

@@ -31,9 +31,20 @@ const ITEMS = [
   },
 ]
 
-const meta: Meta = {
+const meta: Meta<typeof DropdownMenu> = {
   title: 'components/Dropdown',
-  component: () => (
+  component: DropdownMenu,
+  parameters: {
+    layout: 'centered',
+  },
+}
+
+export default meta
+
+type Story = StoryObj<typeof DropdownMenu>
+
+export const Basic: Story = {
+  render: () => (
     <DropdownMenu>
       <DropdownMenuTrigger>
         <span className="text-sm font-medium text-neutral-500 dark:text-neutral-300">
@@ -53,11 +64,50 @@ const meta: Meta = {
       </DropdownMenuContent>
     </DropdownMenu>
   ),
-  parameters: {
-    layout: 'centered',
-  },
 }
 
-export default meta
+export const Floating: Story = {
+  render: () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        <span className="text-sm font-medium text-neutral-500 dark:text-neutral-300">
+          Settings
+        </span>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent floating className="mt-2">
+        {ITEMS.map(({ icon, name, customStyle }, index) => (
+          <DropdownMenuItem key={index} className={cn(customStyle)}>
+            {icon}
+            <span className="flex items-center gap-1 text-sm font-medium">
+              {name}
+              <ChevronRightIcon size={12} />
+            </span>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
+}
 
-export const Basic: StoryObj = {}
+export const Api: Story = {
+  render: () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        <span className="text-sm font-medium text-neutral-500 dark:text-neutral-300">
+          Settings
+        </span>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        {ITEMS.map(({ icon, name, customStyle }, index) => (
+          <DropdownMenuItem key={index} className={cn(customStyle)}>
+            {icon}
+            <span className="flex items-center gap-1 text-sm font-medium">
+              {name}
+              <ChevronRightIcon size={12} />
+            </span>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
+}

@@ -14,6 +14,7 @@ const config = {
     '../packages/react/__stories__/Welcome.mdx',
     '../packages/react/__stories__/design-system/**/*.mdx',
     '../packages/react/__stories__/components/**/*.stories.@(ts|tsx)',
+    '../packages/react/__stories__/components/**/*.mdx',
   ],
   staticDirs: ['../imgs'],
   addons: [

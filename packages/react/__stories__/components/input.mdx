@@ -1,0 +1,29 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as InputStories from './input.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={InputStories} />
+
+<PageHeader
+  title="Input"
+  description="A single-line text field. The placeholder animates out of view as soon as the user starts typing."
+/>
+
+### default
+
+`default` is the input's resting state, showing the animated placeholder.
+
+<Canvas of={InputStories.Default} />
+
+### disabled
+
+Inputs with the native `disabled` attribute become inert and communicate
+that the field is currently unavailable.
+
+<Canvas of={InputStories.Disabled} />
+
+## API
+
+<Canvas of={InputStories.Api} />
+
+<Controls of={InputStories.Api} />
