@@ -1,0 +1,49 @@
+{
+	"name": "@cattleya-ui/react",
+	"version": "1.0.0",
+	"description": "Component library for building applications that flourish.",
+	"type": "module",
+	"exports": {
+		"./styles.css": "./src/styles/globals.css"
+	},
+	"keywords": [
+		"react",
+		"ui",
+		"components",
+		"design-system",
+		"tailwind",
+		"radix-ui"
+	],
+	"license": "MIT",
+	"author": "Gabriel Ramos (https://github.com/whosramoss)",
+	"homepage": "https://github.com/whosramoss/cattleya-ui",
+	"bugs": {
+		"url": "https://github.com/whosramoss/cattleya-ui/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/whosramoss/cattleya-ui.git",
+		"directory": "packages/react"
+	},
+	"dependencies": {
+		"@radix-ui/react-accordion": "^1.2.8",
+		"@radix-ui/react-avatar": "^1.1.10",
+		"@radix-ui/react-checkbox": "^1.1.2",
+		"@radix-ui/react-dialog": "^1.1.6",
+		"@radix-ui/react-switch": "^1.2.3",
+		"@radix-ui/react-tooltip": "^1.2.4",
+		"clsx": "^2.1.0",
+		"lucide-react": "^0.330.0",
+		"motion": "^11.15.0",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-use-measure": "^2.1.1",
+		"tailwind-merge": "^2.2.1",
+		"tailwind-variants": "0.2.0"
+	},
+	"devDependencies": {
+		"@cattleya-ui/ts-config": "*",
+		"@types/react": "^18",
+		"@types/react-dom": "^18"
+	}
+}
