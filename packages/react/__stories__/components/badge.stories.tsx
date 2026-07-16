@@ -21,4 +21,38 @@ const meta: Meta<BadgeProps> = {
 
 export default meta
 
-export const Basic: StoryObj = {}
+type Story = StoryObj<BadgeProps>
+
+export const Default: Story = {
+  args: {
+    variant: 'default',
+  },
+}
+
+export const Outline: Story = {
+  args: {
+    variant: 'outline',
+    children: 'Outline',
+  },
+}
+
+export const Success: Story = {
+  args: {
+    variant: 'success',
+    children: 'Success',
+  },
+}
+
+export const Destructive: Story = {
+  args: {
+    variant: 'destructive',
+    children: 'Destructive',
+  },
+}
+
+export const Api: Story = {
+  args: {
+    variant: 'default',
+    children: 'Badge',
+  },
+}

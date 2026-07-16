@@ -26,3 +26,5 @@ const meta: Meta<CardProps> = {
 export default meta
 
 export const Basic: StoryObj = {}
+
+export const Api: StoryObj = {}
