@@ -1,0 +1,38 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as SwitchStories from './switch.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={SwitchStories} />
+
+<PageHeader
+  title="Switch"
+  description="A two-state toggle used to turn a single setting on or off immediately."
+/>
+
+### states
+
+#### unchecked
+
+`unchecked` is the switch's default state.
+
+<Canvas of={SwitchStories.Unchecked} />
+
+#### checked
+
+The `checked` state slides the thumb to the right and fills the track with
+the primary color.
+
+<Canvas of={SwitchStories.Checked} />
+
+### disabled
+
+Switches with the `disabled` prop become inert and communicate that the
+setting is currently unavailable.
+
+<Canvas of={SwitchStories.Disabled} />
+
+## API
+
+<Canvas of={SwitchStories.Api} />
+
+<Controls of={SwitchStories.Api} />

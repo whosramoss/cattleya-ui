@@ -1,0 +1,31 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as SpinnerStories from './spinner.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={SpinnerStories} />
+
+<PageHeader
+  title="Spinner"
+  description="An indeterminate loading indicator made of animated bars, used while content or an action is in progress."
+/>
+
+### default
+
+`size-6` is the spinner's default size.
+
+<Canvas of={SpinnerStories.Default} />
+
+### size
+
+The `size` prop accepts any Tailwind `size-*` utility, letting the spinner
+scale up or down to match the surrounding context.
+
+<Canvas of={SpinnerStories.Small} />
+
+<Canvas of={SpinnerStories.Large} />
+
+## API
+
+<Canvas of={SpinnerStories.Api} />
+
+<Controls of={SpinnerStories.Api} />

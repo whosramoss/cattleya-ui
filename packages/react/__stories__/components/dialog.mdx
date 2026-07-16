@@ -1,0 +1,23 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as DialogStories from './dialog.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={DialogStories} />
+
+<PageHeader
+  title="Dialog"
+  description="A modal window overlaid on the page, used to focus the user's attention on a single task, such as confirming an action or editing a value."
+/>
+
+### basic
+
+`Dialog` is composed from `DialogTrigger`, `DialogContent`, `DialogTitle`,
+`DialogDescription`, and `DialogFooter`. Click the trigger to open it.
+
+<Canvas of={DialogStories.Basic} />
+
+## API
+
+<Canvas of={DialogStories.Api} />
+
+<Controls of={DialogStories.Api} />

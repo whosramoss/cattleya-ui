@@ -1,0 +1,39 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as TooltipStories from './tooltip.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={TooltipStories} />
+
+<PageHeader
+  title="Tooltip"
+  description="A small popup that shows extra information about an element when it receives focus or is hovered."
+/>
+
+### side
+
+The `side` prop controls which side of the trigger the tooltip is
+positioned on.
+
+#### top
+
+`top` is the tooltip's default side.
+
+<Canvas of={TooltipStories.Top} />
+
+#### right
+
+<Canvas of={TooltipStories.Right} />
+
+#### bottom
+
+<Canvas of={TooltipStories.Bottom} />
+
+#### left
+
+<Canvas of={TooltipStories.Left} />
+
+## API
+
+<Canvas of={TooltipStories.Api} />
+
+<Controls of={TooltipStories.Api} />

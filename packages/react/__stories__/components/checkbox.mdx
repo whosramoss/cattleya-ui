@@ -1,0 +1,44 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as CheckboxStories from './checkbox.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={CheckboxStories} />
+
+<PageHeader
+  title="Checkbox"
+  description="Allows a user to select one or more options from a set, or to toggle a single setting on or off."
+/>
+
+### states
+
+#### unchecked
+
+`unchecked` is the checkbox's default state.
+
+<Canvas of={CheckboxStories.Unchecked} />
+
+#### checked
+
+The `checked` state shows an animated check mark inside the indicator.
+
+<Canvas of={CheckboxStories.Checked} />
+
+#### indeterminate
+
+The `indeterminate` state is used when the checkbox represents a group of
+options that are only partially selected.
+
+<Canvas of={CheckboxStories.Indeterminate} />
+
+### disabled
+
+Checkboxes with the `disabled` prop become inert and communicate that the
+option is currently unavailable.
+
+<Canvas of={CheckboxStories.Disabled} />
+
+## API
+
+<Canvas of={CheckboxStories.Api} />
+
+<Controls of={CheckboxStories.Api} />

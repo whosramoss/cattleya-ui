@@ -1,0 +1,39 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as AccordionStories from './accordion.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={AccordionStories} />
+
+<PageHeader
+  title="Accordion"
+  description="A vertically stacked set of interactive headings that each reveal an associated section of content."
+/>
+
+### type
+
+#### single
+
+With `type="single"`, only one item can be expanded at a time. Pairing it
+with `collapsible` allows the open item to be closed again.
+
+<Canvas of={AccordionStories.Single} />
+
+#### multiple
+
+With `type="multiple"`, any number of items can be expanded at the same
+time.
+
+<Canvas of={AccordionStories.Multiple} />
+
+### disabled item
+
+Individual items can receive the `disabled` prop, preventing their trigger
+from being toggled.
+
+<Canvas of={AccordionStories.DisabledItem} />
+
+## API
+
+<Canvas of={AccordionStories.Api} />
+
+<Controls of={AccordionStories.Api} />

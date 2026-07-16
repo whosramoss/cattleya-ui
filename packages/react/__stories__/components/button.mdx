@@ -1,0 +1,62 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as ButtonStories from './button.stories'
+import { PageHeader } from './utils/PageHeader'
+
+<Meta of={ButtonStories} />
+
+<PageHeader
+  title="Button"
+  description="Triggers an action or event, such as submitting a form, opening a dialog, or navigating to a new page."
+/>
+
+### variants
+
+#### default
+
+The `default` variant is used for medium emphasis actions. It should be used
+in place of a call-to-action button when the action requires less prominence,
+or when there are several primary actions of equal importance on the page.
+`default` is the button's default variant.
+
+<Canvas of={ButtonStories.Default} />
+
+#### outline
+
+The `outline` variant is for low emphasis. It should be placed alongside
+other button variants to surface less prominent actions.
+
+<Canvas of={ButtonStories.Outline} />
+
+#### success
+
+The `success` variant communicates a positive or confirming action, such as
+approving or completing a step.
+
+<Canvas of={ButtonStories.Success} />
+
+#### destructive
+
+The `destructive` variant communicates a dangerous or irreversible action,
+such as deleting a resource.
+
+<Canvas of={ButtonStories.Destructive} />
+
+### magnetic
+
+Buttons with the `isMagnetic` prop follow the cursor with a subtle spring
+animation when hovered, adding emphasis to the action.
+
+<Canvas of={ButtonStories.Magnetic} />
+
+### disabled
+
+Buttons with the native `disabled` attribute become inert and communicate
+that the action is currently unavailable.
+
+<Canvas of={ButtonStories.Disabled} />
+
+## API
+
+<Canvas of={ButtonStories.Api} />
+
+<Controls of={ButtonStories.Api} />
