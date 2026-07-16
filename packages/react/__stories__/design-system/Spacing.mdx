@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/blocks'
+
+import { TokenTable, TokenCode } from './TokenTable'
+import { SpacingScale } from './SpacingScale'
+
+<Meta title="Design System/Spacing" />
+
+# Spacing
+
+Default Tailwind scale (`1` = `0.25rem` = `4px`). Only the values actually
+used by **@cattleya-ui/react** components are listed below.
+
+<TokenTable
+  columns={['Token', 'rem', 'px', 'Utilities', 'Usage']}
+  rows={[
+    [<TokenCode>0.5</TokenCode>, '0.125rem', '2px', <TokenCode>p-0.5</TokenCode>, 'Inner padding of the Switch track'],
+    [<TokenCode>1</TokenCode>, '0.25rem', '4px', <TokenCode>p-1, gap-1</TokenCode>, 'DropdownMenu content padding'],
+    [<TokenCode>1.5</TokenCode>, '0.375rem', '6px', <TokenCode>px-1.5, gap-1.5</TokenCode>, 'Item padding / gap between groups'],
+    [<TokenCode>2</TokenCode>, '0.5rem', '8px', <TokenCode>px-2, py-2, gap-2</TokenCode>, 'Default button/input padding, icon+text gap'],
+    [<TokenCode>3</TokenCode>, '0.75rem', '12px', <TokenCode>px-3, py-3</TokenCode>, 'Badge, tooltip, dialog footer padding'],
+    [<TokenCode>3.5</TokenCode>, '0.875rem', '14px', <TokenCode>px-3.5</TokenCode>, 'Accordion trigger horizontal padding'],
+    [<TokenCode>4</TokenCode>, '1rem', '16px', <TokenCode>px-4, gap-4</TokenCode>, 'Button/card horizontal padding'],
+    [<TokenCode>5</TokenCode>, '1.25rem', '20px', <TokenCode>py-5, pt-5</TokenCode>, 'Card vertical padding / dialog top padding'],
+    [<TokenCode>6</TokenCode>, '1.5rem', '24px', <TokenCode>px-6</TokenCode>, 'Dialog horizontal padding'],
+  ]}
+/>
+
+<SpacingScale />
