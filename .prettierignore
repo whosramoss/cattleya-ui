@@ -1,11 +1,5 @@
-node_modules/
-.next/
-out/
-build/
-dist/
-coverage/
+node_modules
+dist
+coverage
+storybook-static
 package-lock.json
-apps/www/public/registry/
-apps/www/src/assets/icons/
-storybook-static/
-*.mdx
