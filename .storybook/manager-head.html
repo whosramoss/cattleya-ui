@@ -50,12 +50,55 @@
   body,
   #storybook-root,
   #root {
-    background: #1c020e !important;
+    background: #a60058 !important;
     font-family: 'Geist', sans-serif !important;
   }
 
   .sb-show-main,
   .sb-main-centered {
-    background: #e3c8d3 !important;
+    background: #ff9abd !important;
+  }
+
+  /* Hide Storybook's "Create a new story" control */
+  .sidebar-container .search-field + *,
+  [aria-label='Create a new story'] {
+    display: none !important;
+  }
+
+  /* IconButton, solid white in toolbar and sidebar */
+  .css-1vwqikw,
+  .sb-bar button,
+  .sidebar-subheading-action,
+  .search-field button {
+    color: #ffffff !important;
+  }
+
+  .css-1vwqikw:hover,
+  .css-1vwqikw:focus,
+  .css-1vwqikw:active,
+  .sb-bar button:hover,
+  .sb-bar button:focus,
+  .sb-bar button:active,
+  .sidebar-subheading-action:hover,
+  .sidebar-subheading-action:focus,
+  .search-field button:hover,
+  .search-field button:focus {
+    color: #ffffff !important;
+  }
+
+  .css-cu2bc6 {
+    box-shadow: #ffffff 0px 0px 0px 1px inset !important;
+    border-radius: 200px !important;
+  }
+
+  .css-1yndrca,
+  .css-1rzlxhg,
+  .css-pvptv1::placeholder,
+  .css-h7e28b {
+    color: #ffffff !important;
+  }
+
+  .css-l8ppnm {
+    color: #d5c6b4 !important;
   }
 </style>

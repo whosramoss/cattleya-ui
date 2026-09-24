@@ -13,35 +13,35 @@ addons.setConfig({
     fontBase: '"Geist", sans-serif',
     fontCode: '"Geist Mono", monospace',
 
-    colorPrimary: '#BD5B85',
-    colorSecondary: '#BD5B85',
+    colorPrimary: '#e6007c',
+    colorSecondary: '#e6007c',
 
     // UI chrome — replace default white surfaces
-    appBg: '#2F0619',
-    appContentBg: '#2F0619',
-    appPreviewBg: '#2F0619',
-    appBorderColor: '#BD5B85',
+    appBg: '#a20058',
+    appContentBg: '#a20058',
+    appPreviewBg: '#ffffff',
+    appBorderColor: '#e6007c',
     appBorderRadius: 6,
 
     // Text
-    textColor: '#EFE2E8',
-    textMutedColor: '#BD5B85',
-    textInverseColor: '#2F0619',
+    textColor: '#ffffff',
+    textMutedColor: '#e6007c',
+    textInverseColor: '#a20058',
 
     // Toolbar
-    barTextColor: '#EFE2E8',
-    barSelectedColor: '#BD5B85',
-    barHoverColor: '#BD5B85',
-    barBg: '#2F0619',
+    barTextColor: '#ffffff',
+    barSelectedColor: '#e6007c',
+    barHoverColor: '#e6007c',
+    barBg: '#a20058',
 
     // Forms
     inputBg: '#2E2E30',
-    inputBorder: '#BD5B85',
-    inputTextColor: '#EFE2E8',
+    inputBorder: '#e6007c',
+    inputTextColor: '#ffffff',
     inputBorderRadius: 4,
 
     // Buttons
-    buttonBg: '#BD5B85',
-    buttonBorder: '#BD5B85',
-  }),
+    buttonBg: '#ffffff',
+    buttonBorder: '#e6007c'
+  })
 })
