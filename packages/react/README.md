@@ -23,7 +23,7 @@ Import the design system styles once in your app entry:
 import 'cattleya-ui/styles.css'
 ```
 
-Components follow a copy-friendly source style — browse them in this package (`src/components`) or on [GitHub](https://github.com/whosramoss/cattleya-ui/tree/main/packages/react/src/components), then bring the ones you need into your project:
+Components follow a copy-friendly source style, browse them in this package (`src/components`) or on [GitHub](https://github.com/whosramoss/cattleya-ui/tree/main/packages/react/src/components), then bring the ones you need into your project:
 
 ```tsx
 import { Button } from './components/button'

@@ -1,6 +1,6 @@
 <h1>
   <p align="center">
-    <img src="./imgs/android-chrome-192x192.png" alt="logo" width="128">
+    <img src="https://raw.githubusercontent.com/whosramoss/cattleya-ui/main/imgs/android-chrome-192x192.png" alt="logo" width="128">
     <br>cattleya-ui
   </p>
 </h1>
@@ -29,7 +29,7 @@ Import the design system styles once in your app entry:
 import 'cattleya-ui/styles.css'
 ```
 
-Components live under `cattleya-ui` and follow a copy-friendly source style — browse them in Storybook, then bring the ones you need into your project.
+Components live under `cattleya-ui` and follow a copy-friendly source style , browse them in Storybook, then bring the ones you need into your project.
 
 ```tsx
 import { Button } from './components/button'
@@ -64,7 +64,7 @@ Colors (base / semantic / component), spacing, radius, and typography are docume
 
 ## TypeScript
 
-Components are written in TypeScript (`.tsx`). Types ship with the source — no separate `@types` package required.
+Components are written in TypeScript (`.tsx`). Types ship with the source , no separate `@types` package required.
 
 ## Contributing
 
