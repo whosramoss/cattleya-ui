@@ -1,53 +1,76 @@
 {
-	"name": "cattleya-ui",
-	"version": "1.0.0",
-	"description": "Component library for building applications that flourish.",
-	"type": "module",
-	"exports": {
-		"./styles.css": "./src/styles/globals.css"
-	},
-	"files": [
-		"src",
-		"CHANGELOG.md"
-	],
-	"keywords": [
-		"react",
-		"ui",
-		"components",
-		"design-system",
-		"tailwind",
-		"radix-ui"
-	],
-	"license": "MIT",
-	"author": "Gabriel Ramos (https://github.com/whosramoss)",
-	"homepage": "https://github.com/whosramoss/cattleya-ui",
-	"bugs": {
-		"url": "https://github.com/whosramoss/cattleya-ui/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/whosramoss/cattleya-ui.git",
-		"directory": "packages/react"
-	},
-	"dependencies": {
-		"@radix-ui/react-accordion": "^1.2.8",
-		"@radix-ui/react-avatar": "^1.1.10",
-		"@radix-ui/react-checkbox": "^1.1.2",
-		"@radix-ui/react-dialog": "^1.1.6",
-		"@radix-ui/react-switch": "^1.2.3",
-		"@radix-ui/react-tooltip": "^1.2.4",
-		"clsx": "^2.1.0",
-		"lucide-react": "^0.330.0",
-		"motion": "^11.15.0",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"react-use-measure": "^2.1.1",
-		"tailwind-merge": "^2.2.1",
-		"tailwind-variants": "0.2.0"
-	},
-	"devDependencies": {
-		"@cattleya-ui/ts-config": "*",
-		"@types/react": "^18",
-		"@types/react-dom": "^18"
-	}
+  "name": "cattleya-ui",
+  "version": "1.0.0",
+  "description": "Component library for building applications that flourish.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/lib.d.ts",
+        "default": "./dist/lib.js"
+      }
+    },
+    "./dist/*": "./dist/*",
+    "./styles/*": "./src/styles/*"
+  },
+  "files": [
+    "src",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "design-system",
+    "tailwind"
+  ],
+  "license": "MIT",
+  "author": "Gabriel Ramos (https://github.com/whosramoss)",
+  "homepage": "https://github.com/whosramoss/cattleya-ui",
+  "bugs": {
+    "url": "https://github.com/whosramoss/cattleya-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whosramoss/cattleya-ui.git",
+    "directory": "packages/react"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly -p tsconfig.json",
+    "test": "vitest run --reporter verbose src",
+    "test:integration": "npm run build && vitest run --reporter verbose tests && npm run clean",
+    "test:coverage": "vitest run --reporter verbose src --coverage",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^1.3.11",
+    "@radix-ui/react-slot": "^1.3.3",
+    "@radix-ui/react-switch": "^1.3.7",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitejs/plugin-react": "5.2.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.3.0"
+  }
 }
