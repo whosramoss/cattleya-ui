@@ -1,0 +1,24 @@
+{
+  "plugins": ["react", "react-hooks", "jsx-a11y"],
+  "extends": [
+    "../../.eslintrc",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/prop-types": ["off"],
+    "react-hooks/set-state-in-effect": ["off"],
+    "react-hooks/refs": ["off"],
+    "react-hooks/immutability": ["off"],
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "controlComponents": ["Checkbox", "Radio", "Switch", "Input", "Textarea"]
+    }]
+  }
+}

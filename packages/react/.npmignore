@@ -1,11 +1,12 @@
-# Storybook — docs e demos, não fazem parte do package publicado
-__stories__/
-
-# Tooling local / monorepo
-tsconfig.json
-postcss.config.mjs
-
-# Artefatos de build e ambiente
-*.log
-*.tsbuildinfo
-.DS_Store
+assets
+coverage
+tests
+__stories__
+.eslintrc
+package.json
+README.md
+vite.config.js
+vite.config.ts
+vitest.config.js
+vitest.config.ts
+vitest.setup.ts
