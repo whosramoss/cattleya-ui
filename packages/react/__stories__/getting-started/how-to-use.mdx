@@ -1,0 +1,72 @@
+import { Meta, Source } from '@storybook/blocks'
+import { PageHeader } from '../utils/header.storybook'
+import '../utils/index.storybook.css'
+
+<Meta title="Getting Started/How to use" />
+
+<PageHeader title="How to use" />
+
+Install the package, load the theme, then import the components.
+
+## Install
+
+<Source
+  dark
+  code={`npm install @cattleya-ui
+npm install -D tailwindcss @tailwindcss/vite`}
+  language="bash"
+/>
+
+React 18 or 19 is required. Tailwind v4 and the Vite plugin process the theme.
+
+## Configure
+
+Add the plugin in `vite.config.ts`:
+
+<Source dark code={`import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [tailwindcss()]
+})`} language="ts" />
+
+Import the theme once in the app entry (`main.tsx`):
+
+<Source
+  dark
+  code={`import '@cattleya-ui/styles/cattleya-ui.css'`}
+  language="ts"
+/>
+
+This file already imports Tailwind and scans the library source. You do not need `dist/style.css`.
+
+## Use components
+
+<Source
+  dark
+  code={`import { Button, Card, Input } from '@cattleya-ui'
+
+export function Example() {
+  return (
+    <Card>
+      <Input name="email" placeholder="Email" />
+      <Button variant="primary">Continue</Button>
+    </Card>
+  )
+}`}
+  language="tsx"
+/>
+
+Available components: `Button`, `Card`, `Badge`, `Input`, `Textarea`, `Checkbox`, `Radio`, `Switch`.
+
+Pass extra utilities with `className`. Use `cn` from `@cattleya-ui` when you need to merge classes without conflicts:
+
+<Source
+  dark
+  code={`import { Button, cn } from '@cattleya-ui'
+
+export function Example({ className }) {
+  return <Button className={cn('w-full', className)} />
+}`}
+  language="tsx"
+/>
