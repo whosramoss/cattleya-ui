@@ -1,0 +1,183 @@
+.token-table .docblock-argstable thead tr th:first-child,
+.token-table .docblock-argstable thead tr th:nth-child(2),
+.token-table .docblock-argstable thead tr th:nth-child(3),
+.token-table .docblock-argstable thead tr th:nth-child(4) {
+  font-size: 0;
+  color: #fff;
+}
+
+.token-table .docblock-argstable thead tr th:first-child::after {
+  content: 'Token';
+  font-size: 14px;
+}
+
+.token-table .docblock-argstable thead tr th:nth-child(3)::after {
+  content: 'Core Token';
+  font-size: 14px;
+}
+
+.token-table .docblock-argstable thead tr th:nth-child(4)::after {
+  content: 'Value';
+  font-size: 14px;
+}
+
+.token-table .docblock-argstable thead tr th:nth-child(2)::after {
+  content: 'Description';
+  font-size: 14px;
+}
+
+.token-table .css-gg4vpm {
+  display: contents;
+}
+
+.token-table .css-gg4vpm button {
+  position: relative;
+  left: 90%;
+  color: #fff;
+}
+
+.token-table .docblock-argstable-head {
+  background-color: #a20058;
+}
+
+.hide-default-column .docblock-argstable thead tr th:nth-child(3),
+.hide-default-column .docblock-argstable tbody tr td:nth-child(3) {
+  display: none;
+}
+
+.hide-variable-column .docblock-argstable thead tr th:nth-child(4),
+.hide-variable-column .docblock-argstable tbody tr td:nth-child(4) {
+  display: none;
+}
+
+.spacing-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.spacing-scale__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 20px;
+}
+
+.spacing-scale__label {
+  flex: 0 0 148px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: #4f5358;
+}
+
+.spacing-scale__bar {
+  display: block;
+  height: 16px;
+  flex-shrink: 0;
+  background-color: #a20058;
+  border-radius: 2px;
+}
+
+.spacing-scale__row--used .spacing-scale__label {
+  color: #a20058;
+  font-weight: 600;
+}
+
+.spacing-scale__use {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: #a20058;
+  white-space: nowrap;
+}
+
+.grid-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.grid-stack__label {
+  margin: 0 0 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: #a20058;
+}
+
+.radius-scale {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.radius-scale__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.radius-scale__label {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: #a20058;
+}
+
+.typography-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.typography-scale__row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.typography-scale__token {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: #a20058;
+}
+
+.typography-scale__sample {
+  margin: 0;
+  color: #18191b;
+}
+
+.corner-radius-example {
+  width: 80px;
+  height: 80px;
+  background-color: #a20058;
+}
+
+.grid-example {
+  display: flex;
+  width: 100%;
+  border: 1px solid #edeeef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.grid-example__margin {
+  background-color: #eee8ff;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.grid-example__content {
+  display: flex;
+  flex: 1;
+  height: 48px;
+  gap: 10px;
+}
+
+.grid-example__column {
+  flex: 1;
+  background-color: #a20058;
+  border-radius: 4px;
+}
