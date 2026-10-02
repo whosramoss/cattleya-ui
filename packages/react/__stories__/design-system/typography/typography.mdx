@@ -1,0 +1,72 @@
+import { Meta, Canvas, Source } from '@storybook/blocks'
+import * as TypographyStories from './typography.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import { QuickTable } from '../../utils/table.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={TypographyStories} />
+
+<PageHeader title="Typography" />
+
+Use `title-*`, `body-*`, and `label-*`. Geist is the only family. Default weights: title **600**, body and label **500**. Suffixes: `-semi-strong` is 600, `-strong` and body `-highlight` are 700.
+
+The default page stack is the same as Use Cases: page title, section title, supporting copy, then labels.
+
+<Canvas
+  of={TypographyStories.Hierarchy}
+  sourceState="shown"
+  source={{
+    code: `
+<div class="flex flex-col gap-4">
+  <h1 class="title-400 text-primary">page title</h1>
+  <h2 class="title-200 text-primary">section title</h2>
+  <p class="body-150 text-secondary">
+    supporting text that describes the content with the secondary color.
+  </p>
+  <p class="label-150-strong text-primary">emphasized label</p>
+  <p class="label-150 text-secondary">helper label</p>
+</div>
+`
+  }}
+/>
+
+## Scale
+
+There is no `title-500`. Prefer the classes above — do not compose raw `font-size-*` / `line-height-*`.
+
+<QuickTable
+  headers={['Role', 'Token', 'Size', 'Use']}
+  rows={[
+    ['Title', 'title-100', '20px', 'small heading'],
+    ['Title', 'title-200', '24px', 'section title'],
+    ['Title', 'title-300', '28px', 'heading'],
+    ['Title', 'title-400', '32px', 'page title'],
+    ['Title', 'title-600', '40px', 'display'],
+    ['Title', 'title-700', '48px', 'display'],
+    ['Body', 'body-100', '14px', 'short copy, up to 4 lines'],
+    ['Body', 'body-150', '16px', 'long copy, 4+ lines'],
+    ['Label', 'label-100', '12px', 'legal, policies'],
+    ['Label', 'label-150', '14px', 'field label, helper, caption'],
+    ['Label', 'label-200', '16px', 'component title — not body']
+  ]}
+/>
+
+<Canvas of={TypographyStories.TypeScale} sourceState="none" />
+
+## How to use
+
+Same recipe as the preview. Pair type with `text-primary` / `text-secondary` — color tokens live in Colors.
+
+<Source
+  dark
+  code={`
+<h1 class="title-400 text-primary">page title</h1>
+<h2 class="title-200 text-primary">section title</h2>
+<p class="body-150 text-secondary">supporting text</p>
+<p class="label-150-strong text-primary">emphasized label</p>
+<p class="label-150 text-secondary">helper label</p>
+`}
+  language="html"
+/>
+
+Bold a word inside body with `body-100-highlight` / `body-150-highlight`. Do not use `label-*` as paragraph text.

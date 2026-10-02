@@ -1,0 +1,84 @@
+import { Meta, Controls } from "@storybook/blocks";
+import * as ColorsStories from "./colors.stories";
+import { PageHeader } from "../../utils/header.storybook";
+import "../../utils/index.storybook.css";
+
+<Meta of={ColorsStories} />
+
+<PageHeader title="Colors" />
+
+Design tokens are reusable attributes that replace hardcoded design values such as colors, spacing, typography, and shadows, ensuring consistency and flexibility across the system. They let components be defined by meaning (semantics) instead of appearance, which makes global visual identity changes easier.
+
+The structure is organized in three levels: **core tokens**, which store raw values; **semantic tokens**, which assign meaning and usage context to those values; and **component tokens**, which apply semantic tokens to specific interface components.
+
+## Overview
+
+- [Core Tokens](#core-tokens)
+  - [Primary](#primary)
+  - [Secondary](#secondary)
+  - [Tertiary](#tertiary)
+  - [Neutral](#neutral)
+  - [Status](#status)
+- [Semantic Tokens](#semantic-tokens)
+  - [Text](#text)
+  - [Surface](#surface)
+  - [Border](#border)
+- [Component Tokens](#component-tokens)
+  - [Button](#button)
+  - [Focus](#focus)
+
+<div className="token-table hide-default-column">
+
+## Core Tokens
+
+Core tokens store raw values so they can be reused in semantic tokens.
+
+### Primary
+
+<Controls of={ColorsStories.Primary} />
+
+### Secondary
+
+<Controls of={ColorsStories.Secondary} />
+
+### Tertiary
+
+<Controls of={ColorsStories.Tertiary} />
+
+### Neutral
+
+<Controls of={ColorsStories.Neutral} />
+
+### Status
+
+<Controls of={ColorsStories.Status} />
+
+## Semantic Tokens
+
+Semantic tokens reference core tokens and suggest an intended use for them.
+
+### Text
+
+<Controls of={ColorsStories.Text} />
+
+### Surface
+
+<Controls of={ColorsStories.Surface} />
+
+### Border
+
+<Controls of={ColorsStories.Border} />
+
+## Component Tokens
+
+Component tokens reference semantic tokens so they can be used in a specific component.
+
+### Button
+
+<Controls of={ColorsStories.Button} />
+
+### Focus
+
+<Controls of={ColorsStories.Focus} />
+
+</div>

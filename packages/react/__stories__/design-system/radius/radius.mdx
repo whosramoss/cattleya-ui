@@ -1,0 +1,51 @@
+import { Meta, Canvas, Source } from '@storybook/blocks'
+import * as RadiusStories from './radius.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import { QuickTable } from '../../utils/table.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={RadiusStories} />
+
+<PageHeader title="Radius" />
+
+Use `corner-radius-*`. **100** is 4px; each step adds 4px. `full` is a pill.
+
+## Scale
+
+<QuickTable
+  headers={['Token', 'Value', 'Use']}
+  rows={[
+    ['corner-radius-100', '4px', 'Checkbox'],
+    ['corner-radius-200', '8px', 'Badge'],
+    ['corner-radius-300', '12px', 'Input, compact images'],
+    ['corner-radius-400', '16px', 'Card'],
+    ['corner-radius-full', 'pill', 'Button, Radio, Switch']
+  ]}
+/>
+
+<Canvas
+  of={RadiusStories.RadiusScale}
+  sourceState="shown"
+  source={{
+    code: `
+<div class="corner-radius-100"></div>
+<div class="corner-radius-200"></div>
+<div class="corner-radius-300"></div>
+<div class="corner-radius-400"></div>
+<div class="corner-radius-full"></div>
+  `
+  }}
+/>
+
+## How to use
+
+<Source
+  dark
+  code={`
+<div class="corner-radius-400">card</div>
+<button class="corner-radius-full">button</button>
+`}
+  language="html"
+/>
+
+One side only: `corner-radius-t-300`, `corner-radius-b-*`, `l`, `r`. In custom CSS, `border-radius: var(--corner-radius-300)`.
