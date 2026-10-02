@@ -1,0 +1,95 @@
+import { Meta, Canvas, Source } from '@storybook/blocks'
+import * as GridStories from './grid.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import { QuickTable } from '../../utils/table.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={GridStories} />
+
+<PageHeader title="Grid" />
+
+Columns, gutter, and page margin are one layout. Distances come from the spacing scale: `--spacing: 0.4rem` (4px).
+
+The class number is the step, not the pixel value — `gap-4` is **16px**, `var(--spacing-8)` is **32px**.
+
+## Overview
+
+- [Grid scale](#grid-scale)
+- [Spacing scale](#spacing-scale)
+- [How to use](#how-to-use)
+
+## Grid Scale
+
+Gutter and margin are spacing utilities. Tailwind prefixes follow this file (`--breakpoint-sm` 600px, `--breakpoint-md` 900px, `--breakpoint-lg` 1200px) — not the names Small / Medium / Large.
+
+<QuickTable
+  headers={['Breakpoint', 'Range', 'Columns', 'Gutter', 'Margin', 'Prefix']}
+  rows={[
+    ['Small', '0–599px', '4', 'gap-2.5 · 10px', 'mx-5 · 20px', 'default'],
+    ['Medium', '600–899px', '8', 'gap-4 · 16px', 'mx-8 · 32px', 'sm:'],
+    ['Large', '900–1199px', '12', 'gap-6 · 24px', 'mx-8 · 32px', 'md:'],
+    ['Extra Large', '1200px+', '12', 'gap-6 · 24px', 'mx-auto', 'lg:']
+  ]}
+/>
+
+`gap-2.5` is the only half-step. Everything else is an integer token on the scale below.
+
+<Canvas
+  of={GridStories.BreakpointsTogether}
+  sourceState="shown"
+  source={{
+    code: `
+<div class="
+  grid grid-cols-4 gap-2.5 mx-5 
+  sm:grid-cols-8 sm:gap-4 sm:mx-8 
+  md:grid-cols-12 md:gap-6 
+  lg:max-w-[1200px] lg:mx-auto
+">
+  ...
+</div>
+  `
+  }}
+/>
+
+## Spacing scale
+
+The number on the class is the step, not the pixel size. One step is **4px (0.4rem)**. `gap` is the space between children, `p` is padding, `m` is margin — same step, same size.
+
+- **spacing-1** — 4px (0.4rem). `gap-1`, `p-1`, `m-1`
+- **spacing-2** — 8px (0.8rem). `gap-2`, `p-2`, `m-2`
+- **spacing-3** — 12px (1.2rem). `gap-3`, `p-3`, `m-3`
+
+The rest of the scale is the same math: step × 4px. Rows tagged in the preview are the values the grid already uses.
+
+<Canvas of={GridStories.SpacingScale} sourceState="none" />
+
+## How to use
+
+Inside a column, keep using the same scale for padding and stack gap — `p-4` (16px), `gap-3` (12px), `gap-8` (32px).
+
+Custom CSS uses the same step numbers:
+
+<Source
+  dark
+  code={`
+.component {
+  padding: var(--spacing-4); /* 16px */
+  gap: var(--spacing-6);     /* 24px */
+  margin-inline: var(--spacing-8); /* 32px */
+}
+`}
+  language="css"
+/>
+
+Avoid raw pixels and treating the token number as pixels:
+
+<Source
+  dark
+  code={`
+.component {
+  gap: var(--spacing-8); /* 32px, not 8px */
+  padding: 8px;          /* outside the scale */
+}
+`}
+  language="css"
+/>

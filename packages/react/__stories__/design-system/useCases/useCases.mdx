@@ -1,0 +1,94 @@
+import { Meta, Canvas } from '@storybook/blocks'
+import * as UseCasesStories from './useCases.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={UseCasesStories} />
+
+<PageHeader title="Use Cases" />
+
+Practical examples applying **typography**, **colors**, and **grid** tokens.
+
+## Text hierarchy
+
+<Canvas
+  of={UseCasesStories.TextHierarchy}
+  sourceState="shown"
+  source={{
+    code: `
+
+<div class="flex flex-col gap-4">
+  <h1 class="title-400 text-primary">page title</h1>
+  <h2 class="title-200 text-primary">section title</h2>
+  <p class="body-150 text-secondary">
+    supporting text that describes the content with the secondary color.
+  </p>
+  <p class="label-150-strong text-primary">emphasized label</p>
+  <p class="label-150 text-secondary">helper label</p>
+</div>
+
+`
+}}
+/>
+
+## Text colors
+
+<Canvas
+  of={UseCasesStories.TextColors}
+  sourceState="shown"
+  source={{
+    code: `
+
+<div class="flex flex-col gap-3">
+  <p class="body-150 text-primary">primary text</p>
+  <p class="body-150 text-secondary">secondary text</p>
+  <p class="body-150 text-clickable">clickable text</p>
+  <p class="body-150 text-disabled">disabled text</p>
+  <p class="body-150 text-positive">positive text</p>
+  <p class="body-150 text-negative">negative text</p>
+  <p class="body-150 text-neutral">neutral text</p>
+  <p class="body-150 text-verified">verified text</p>
+</div>
+
+`
+}}
+/>
+
+## Text with columns and banner
+
+<Canvas
+  of={UseCasesStories.TextWithColumnsAndBanner}
+  sourceState="shown"
+  source={{
+    code: `
+
+<div class="flex flex-col gap-8">
+  <div class="surface-secondary corner-radius-400 flex flex-col p-8 gap-4">
+    <h2 class="title-400 text-primary">deal of the week</h2>
+    <p class="body-150 text-secondary">get up to 50% off selected items</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="flex flex-col gap-2">
+      <h3 class="title-200 text-primary">buy</h3>
+      <p class="body-150 text-secondary">
+        find unique items with easy shipping and payment.
+      </p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <h3 class="title-200 text-primary">sell</h3>
+      <p class="body-150 text-secondary">
+        list what you no longer use and track your earnings.
+      </p>
+    </div>
+    <div class="flex flex-col gap-2">
+      <h3 class="title-200 text-clickable">google one</h3>
+      <p class="body-150 text-secondary">
+        more cloud storage and priority support.
+      </p>
+    </div>
+  </div>
+</div>
+
+`
+}}
+/>
