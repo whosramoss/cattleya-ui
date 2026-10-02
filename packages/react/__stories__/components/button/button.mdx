@@ -1,0 +1,130 @@
+import { Meta, Canvas, Source, Controls, Story, Anchor } from '@storybook/blocks'
+import * as ButtonStories from './button.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={ButtonStories} />
+
+<PageHeader title="Button" />
+
+A button is an interface component that lets the user interact with the application. It is used to trigger actions, such as submitting a form or opening a modal, and can also navigate between pages.
+
+## Variants
+
+Buttons have three main variants that control the style applied to the component: `primary`, `secondary`, and `tertiary`.
+
+### Primary
+
+The primary button is used for medium emphasis. Use it instead of a call-to-action button when the action needs less prominence, or when several primary actions of equal importance appear on the page.
+
+<Canvas
+  of={ButtonStories.ButtonPrimary}
+  sourceState='shown'
+  source={{ code: `
+<Button>
+  Button text
+</Button>
+  ` }}
+/>
+
+### Secondary
+
+The secondary button is for low emphasis. Place it with other button types to surface less prominent actions.
+
+<Canvas
+  of={ButtonStories.ButtonSecondary}
+  sourceState='shown'
+  source={{ code: `
+<Button variant="secondary">
+  Button text
+</Button>
+  ` }}
+/>
+
+### Tertiary
+
+By default, buttons have a visible stroke. Tertiary buttons do not, and should only be used for secondary actions in a button group.
+
+<Canvas
+  of={ButtonStories.ButtonTertiary}
+  sourceState='shown'
+  source={{ code: `
+<Button variant="tertiary">
+  Button text
+</Button>
+  ` }}
+/>
+
+Variants can also be configured by screen size. Resize your browser to see the behavior.
+
+<Canvas
+  of={ButtonStories.ButtonVariantResponsive}
+    sourceState='shown'
+  source={{ code: `
+<Button variant={{ xs: 'primary', md: 'secondary' }}>
+  Button text
+</Button>
+  ` }}
+/>
+
+## States
+
+Buttons can behave differently depending on their current state. The most common states are `disabled` and `loading`.
+
+### Disabled
+
+A disabled state communicates that the component is not interactive.
+
+<Canvas
+  of={ButtonStories.ButtonDisabled}
+  sourceState='shown'
+  source={{ code: `
+<Button disabled>
+  Button text
+</Button>
+  ` }}
+/>
+
+### Loading
+
+The loading state indicates that an action is being processed. The label is hidden, a spinner is shown, and the element is not interactive.
+
+<Canvas
+  of={ButtonStories.ButtonLoading}
+  sourceState='shown'
+  source={{ code: `
+<Button loading>
+  Button text
+</Button>
+  ` }}
+/>
+
+## Custom rendering
+
+The button can be rendered as another element when needed, for example to behave as a link. Pass the `asChild` or `as` props with the HTML tag you want to render. Reference: Radix UI [`Primitive`](https://www.radix-ui.com/primitives/docs/utilities/slot).
+
+<Canvas
+  of={ButtonStories.ButtonAsLink}
+  sourceState='shown'
+  source={{ code: `
+<Button asChild>
+  <a
+    href="https://www.google.com"
+    target="_blank"
+  >
+    Search on Google
+  </a>
+</Button>
+  ` }}
+/>
+
+## API
+
+All of the options above can be combined in different ways. Use the playground below to try the available configurations.
+
+<Canvas
+  of={ButtonStories.ButtonPlayground}
+  sourceState='none'
+/>
+
+<Controls of={ButtonStories.ButtonPlayground} />

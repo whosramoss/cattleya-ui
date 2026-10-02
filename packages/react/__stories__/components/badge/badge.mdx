@@ -1,0 +1,110 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as BadgeStories from './badge.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={BadgeStories} />
+
+<PageHeader title="Badge" />
+
+A badge highlights a status, label, or short piece of information.
+
+## Variants
+
+<Canvas
+  of={BadgeStories.Default}
+  sourceState="shown"
+  source={{
+    code: `
+<Badge>used</Badge>
+  `
+  }}
+/>
+
+<Canvas
+  of={BadgeStories.Primary}
+  sourceState="shown"
+  source={{
+    code: `
+<Badge variant="primary">featured</Badge>
+  `
+  }}
+/>
+
+<Canvas
+  of={BadgeStories.Discount}
+  sourceState="shown"
+  source={{
+    code: `
+<Badge variant="discount">-20%</Badge>
+  `
+  }}
+/>
+
+<Canvas
+  of={BadgeStories.Cashback}
+  sourceState="shown"
+  source={{
+    code: `
+<Badge variant="cashback">cashback</Badge>
+  `
+  }}
+/>
+
+<Canvas
+  of={BadgeStories.Positive}
+  sourceState="shown"
+  source={{
+    code: `
+<Badge variant="positive">approved</Badge>
+  `
+  }}
+/>
+
+<Canvas
+  of={BadgeStories.Negative}
+  sourceState="shown"
+  source={{
+    code: `
+<Badge variant="negative">declined</Badge>
+  `
+  }}
+/>
+
+<Canvas
+  of={BadgeStories.Neutral}
+  sourceState="shown"
+  source={{
+    code: `
+<Badge variant="neutral">pending</Badge>
+  `
+  }}
+/>
+
+<Canvas
+  of={BadgeStories.Verified}
+  sourceState="shown"
+  source={{
+    code: `
+<Badge variant="verified">verified</Badge>
+  `
+  }}
+/>
+
+Variants also accept a value per breakpoint.
+
+<Canvas
+  of={BadgeStories.VariantResponsive}
+  sourceState="shown"
+  source={{
+    code: `
+<Badge variant={{ xs: 'discount', md: 'primary' }}>
+  offer
+</Badge>
+  `
+  }}
+/>
+
+## Props
+
+<Controls of={BadgeStories.Default} />
