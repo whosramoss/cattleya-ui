@@ -1,0 +1,23 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as CheckboxStories from './checkbox.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={CheckboxStories} />
+
+<PageHeader title="Checkbox" />
+
+A checkbox lets users select one or more items from a list, or turn an item on or off.
+
+<Canvas
+  of={CheckboxStories.Default}
+  sourceState='shown'
+  source={{ code: `
+<label className="flex flex-row gap-3 items-center label-150">
+  <Checkbox value={value} onValueChange={setValue} />
+  checkbox label
+</label>
+  `}}
+/>
+
+<Controls of={CheckboxStories.Default} />

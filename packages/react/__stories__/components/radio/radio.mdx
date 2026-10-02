@@ -1,0 +1,28 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as RadioStories from './radio.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={RadioStories} />
+
+<PageHeader title="Radio Button" />
+
+A radio lets people select only one option from a set of options.
+
+<Canvas
+  of={RadioStories.Default}
+  sourceState='shown'
+  source={{ code: `
+<label className="flex flex-row gap-3 items-center label-150">
+  <Radio
+    value={value}
+    onValueChange={setValue}
+    name="radio"
+    value="0"
+  />
+  option 1
+</label>
+  `}}
+/>
+
+<Controls of={RadioStories.Default} />

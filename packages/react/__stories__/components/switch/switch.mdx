@@ -1,0 +1,30 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as SwitchStories from './switch.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={SwitchStories} />
+
+<PageHeader title="Switch" />
+
+A switch toggles an item on or off.
+
+<Canvas
+  of={SwitchStories.Default}
+  sourceState="shown"
+  source={{
+    code: `
+<label className="flex flex-row gap-3 items-center label-150">
+  <Switch
+    checked={checked}
+    onCheckedChange={setChecked}
+  />
+  switch label
+</label>
+  `
+  }}
+/>
+
+## Props
+
+<Controls of={SwitchStories.Default} />
