@@ -1,0 +1,194 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as InputStories from './input.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={InputStories} />
+
+<PageHeader title="Text field" />
+
+The `Input` component is used when the expected user input is a single line of text. Text fields have a fixed height and are used for simple data such as any combination of letters, numbers, or symbols.
+
+<Canvas
+  of={InputStories.Default}
+  sourceState='shown'
+  source={{ code: `
+<Input
+  value={value} onValueChange={setValue}
+  placeholder="placeholder"
+/>
+  `}}
+/>
+
+## States
+
+Text fields can behave differently depending on their current state.
+
+### Disabled
+
+The disabled state indicates that the text field is not interactive.
+
+<Canvas
+  of={InputStories.InputDisabled}
+  sourceState='shown'
+  source={{ code: `
+<Input
+  value={value} onValueChange={setValue}
+  placeholder="placeholder"
+  disabled
+/>
+  `}}
+/>
+
+### Invalid
+
+For the field to be considered invalid, it must have been validated and the validation value must be `false`.
+
+<Canvas
+  of={InputStories.InputInvalid}
+  sourceState='shown'
+  source={{ code: `
+<Input
+  value={value} onValueChange={setValue}
+  placeholder="placeholder"
+  validated
+  valid={false}
+/>
+  `}}
+/>
+
+## Custom rendering
+
+The text field can be rendered as another element when needed. Pass the `asChild` or `as` props with the HTML tag you want to render. Reference: Radix UI [`Primitive`](https://www.radix-ui.com/primitives/docs/utilities/slot).
+
+<Canvas
+  of={InputStories.InputAsNumber}
+  sourceState='shown'
+  source={{ code: `
+<Input
+  placeholder="placeholder"
+  asChild
+>
+  <input
+    value={value} onValueChange={setValue}
+    type="number"
+  />
+</Input>
+  `}}
+/>
+
+## Composition
+
+The text field can be composed with a `label` and helper text to be more functional and accessible.
+
+<Canvas
+  of={InputStories.InputComposition}
+  sourceState='shown'
+  source={{ code: `
+<div className="flex flex-col gap-2">
+  <label htmlFor="input" className="label-150">
+    label
+  </label>
+
+  <Input
+    id="input"
+    value={value} onValueChange={setValue}
+    placeholder="placeholder"
+  />
+
+  <span className="label-150">
+    helper text
+  </span>
+</div>
+  `}}
+/>
+
+Text field states can also be applied in composition through the `Input` props:
+
+### Disabled
+
+<Canvas
+  of={InputStories.InputCompositionDisabled}
+  sourceState='shown'
+  source={{ code: `
+<div className="flex flex-col gap-2">
+  <label htmlFor="input" className="label-150">
+    label
+  </label>
+
+  <Input
+    id="input"
+    value={value} onValueChange={setValue}
+    placeholder="placeholder"
+    disabled
+  />
+
+  <span className="label-150">
+    helper text
+  </span>
+</div>
+  `}}
+/>
+
+### Valid
+
+<Canvas
+  of={InputStories.InputCompositionValid}
+  sourceState='shown'
+  source={{ code: `
+<div className="flex flex-col gap-2">
+  <label htmlFor="input" className="label-150">
+    label
+  </label>
+
+  <Input
+    id="input"
+    value={value} onValueChange={setValue}
+    placeholder="placeholder"
+    validated
+    valid
+  />
+
+  <span className="label-150">
+    helper text
+  </span>
+</div>
+  `}}
+/>
+
+### Invalid
+
+<Canvas
+  of={InputStories.InputCompositionInvalid}
+  sourceState='shown'
+  source={{ code: `
+<div className="flex flex-col gap-2">
+  <label htmlFor="input" className="label-150">
+    label
+  </label>
+
+  <Input
+    id="input"
+    value={value} onValueChange={setValue}
+    placeholder="placeholder"
+    validated
+    valid={false}
+  />
+
+  <span className="label-150">
+    helper text
+  </span>
+</div>
+  `}}
+/>
+
+## API
+
+Use the playground below to try the available `Input` configurations.
+
+<Canvas
+  of={InputStories.InputPlayground}
+  sourceState='none'
+/>
+
+<Controls of={InputStories.InputPlayground} />

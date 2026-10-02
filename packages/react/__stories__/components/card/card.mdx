@@ -1,0 +1,91 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as CardStories from './card.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={CardStories} />
+
+<PageHeader title="Card" />
+
+A card groups related content with the design system surface, border, and radius.
+
+## Variants
+
+<Canvas
+  of={CardStories.Default}
+  sourceState="shown"
+  source={{
+    code: `
+<Card className="max-w-70">
+  <div className="surface-secondary corner-radius-300 w-full aspect-square" />
+  <div className="label-150-semi-strong text-primary">vintage t-shirt</div>
+  <div className="title-200 text-primary">$45.00</div>
+</Card>
+  `
+  }}
+/>
+
+<Canvas
+  of={CardStories.Secondary}
+  sourceState="shown"
+  source={{
+    code: `
+<Card variant="secondary" className="max-w-70">
+  <h2 className="title-200 text-primary">deal of the week</h2>
+  <p className="body-100 text-secondary">up to 50% off selected items</p>
+</Card>
+  `
+  }}
+/>
+
+<Canvas
+  of={CardStories.Tertiary}
+  sourceState="shown"
+  source={{
+    code: `
+<Card variant="tertiary" className="max-w-70">
+  <h2 className="title-200 text-primary">google one</h2>
+  <p className="body-100 text-secondary">more cloud storage</p>
+</Card>
+  `
+  }}
+/>
+
+## Product
+
+<Canvas
+  of={CardStories.Product}
+  sourceState="shown"
+  source={{
+    code: `
+<Card className="max-w-70">
+  <div className="relative">
+    <div className="surface-secondary corner-radius-300 w-full aspect-square" />
+    <Badge variant="discount" className="absolute top-2 left-2">-20%</Badge>
+  </div>
+  <div className="label-150-semi-strong text-primary">retro sneakers</div>
+  <div className="title-200 text-primary">$96.00</div>
+</Card>
+  `
+  }}
+/>
+
+The card can be a link with `asChild`.
+
+<Canvas
+  of={CardStories.AsLink}
+  sourceState="shown"
+  source={{
+    code: `
+<Card asChild className="max-w-70">
+  <a href="/product">
+    ...
+  </a>
+</Card>
+  `
+  }}
+/>
+
+## Props
+
+<Controls of={CardStories.Default} />

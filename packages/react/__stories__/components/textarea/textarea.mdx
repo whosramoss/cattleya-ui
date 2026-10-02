@@ -1,0 +1,174 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as TextareaStories from './textarea.stories'
+import { PageHeader } from '../../utils/header.storybook'
+import '../../utils/index.storybook.css'
+
+<Meta of={TextareaStories} />
+
+<PageHeader title="Text area" />
+
+The `Textarea` component is used when the expected user input is longer than a few words and needs to span multiple lines. It is used for features such as comments or user descriptions.
+
+<Canvas
+  of={TextareaStories.Default}
+  sourceState='shown'
+  source={{ code: `
+<Textarea
+  value={value} onValueChange={setValue}
+  placeholder="placeholder"
+/>
+  `}}
+/>
+
+## States
+
+Text fields can behave differently depending on their current state:
+
+### Disabled
+
+The disabled state indicates that the text field is not interactive.
+
+<Canvas
+  of={TextareaStories.TextareaDisabled}
+  sourceState='shown'
+  source={{ code: `
+<Textarea
+  value={value} onValueChange={setValue}
+  placeholder="placeholder"
+  disabled
+/>
+  `}}
+/>
+
+### Invalid
+
+For the field to be considered invalid, it must have been validated and the validation value must be `false`.
+
+<Canvas
+  of={TextareaStories.TextareaInvalid}
+  sourceState='shown'
+  source={{ code: `
+<Textarea
+  value={value} onValueChange={setValue}
+  placeholder="placeholder"
+  validated
+  valid={false}
+/>
+  `}}
+/>
+
+## Composition
+
+The text field can be composed with a `label` and helper text to be more functional and accessible.
+
+<Canvas
+  of={TextareaStories.TextareaComposition}
+  sourceState='shown'
+  source={{ code: `
+<div className="flex flex-col gap-2">
+  <label htmlFor="input" className="label-150">
+    label
+  </label>
+
+  <Textarea
+    id="input"
+    value={value} onValueChange={setValue}
+    placeholder="placeholder"
+  />
+
+  <span className="label-150">
+    helper text
+  </span>
+</div>
+  `}}
+/>
+
+Text field states can also be applied in composition through the `Textarea` props:
+
+### Disabled
+
+<Canvas
+  of={TextareaStories.TextareaCompositionDisabled}
+  sourceState='shown'
+  source={{ code: `
+<div className="flex flex-col gap-2">
+  <label htmlFor="input" className="label-150">
+    label
+  </label>
+
+  <Textarea
+    id="input"
+    value={value} onValueChange={setValue}
+    placeholder="placeholder"
+    disabled
+  />
+
+  <span className="label-150">
+    helper text
+  </span>
+</div>
+  `}}
+/>
+
+### Valid
+
+<Canvas
+  of={TextareaStories.TextareaCompositionValid}
+  sourceState='shown'
+  source={{ code: `
+<div className="flex flex-col gap-2">
+  <label htmlFor="input" className="label-150">
+    label
+  </label>
+
+  <Textarea
+    id="input"
+    value={value} onValueChange={setValue}
+    placeholder="placeholder"
+    validated
+    valid
+  />
+
+  <span className="label-150">
+    helper text
+  </span>
+</div>
+  `}}
+/>
+
+### Invalid
+
+<Canvas
+  of={TextareaStories.TextareaCompositionInvalid}
+  sourceState='shown'
+  source={{ code: `
+<div className="flex flex-col gap-2">
+  <label htmlFor="input" className="label-150">
+    label
+  </label>
+
+  <Textarea
+    id="input"
+    value={value} onValueChange={setValue}
+    placeholder="placeholder"
+    validated
+    valid={false}
+  />
+
+  <span className="label-150">
+    helper text
+  </span>
+</div>
+  `}}
+/>
+
+## API
+
+Use the playground below to try the available `Textarea` configurations.
+
+<Canvas
+  of={TextareaStories.TextareaPlayground}
+  sourceState='none'
+/>
+
+<Controls of={TextareaStories.TextareaPlayground} />
